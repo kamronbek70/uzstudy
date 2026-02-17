@@ -29,7 +29,7 @@ const (
 	MaxUpdateOffset = 100
 	AppVersion      = "2.0.0"
 	AppName         = "UzStudy Bot"
-	DBFile          = "uzstudy.db"
+	DBFile          = "/app/data/uzstudy.db"
 )
 
 // ← O'z admin ID ingizni yozing (@userinfobot orqali oling)
@@ -1977,7 +1977,7 @@ func (b *Bot) quizStop(sess *UserSession, msgID int) {
 		}
 		b.storage.SetSession(sess)
 		sess.Quiz = nil
-		b.EditMessage(sess.ChatID, msgID, 
+		b.EditMessage(sess.ChatID, msgID,
 			fmt.Sprintf("⏹ <b>Quiz to'xtatildi</b>\n\n✅ To'g'ri: <b>%d</b>\n❌ Noto'g'ri: <b>%d</b>\n⭐ Ball: <b>%d</b>", c, t-c, s),
 			MainMenuKb(sess.UserID))
 		return
