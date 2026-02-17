@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["gcc", "sqlite"]
+
+[phases.build]
+cmds = ["CGO_ENABLED=1 go build -o bot main.go"]
+
+[start]
+cmd = "./bot"
